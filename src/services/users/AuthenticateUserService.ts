@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UsersRepositories"; 
+import { UsersRepositories } from "../../repositories/UsersRepositories"; 
 import { compare } from "bcryptjs";
 import { hash } from "bcryptjs";
 import { sign } from "jsonwebtoken";

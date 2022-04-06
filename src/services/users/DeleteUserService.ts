@@ -1,5 +1,5 @@
 import { getCustomRepository, Repository } from "typeorm";
-import { UsersRepositories } from "../repositories/UsersRepositories";
+import { UsersRepositories } from "../../repositories/UsersRepositories";
 
 interface IUserDelete{ 
     id: string
@@ -28,10 +28,6 @@ class DeleteUserService{
         }, err=> {
             throw new Error ("Failed to delete!");
         });
-
-
-        
-
         
     }
 }
