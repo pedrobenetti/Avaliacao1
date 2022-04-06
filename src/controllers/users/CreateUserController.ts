@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateUserService } from "../services/CreateUserService";
+import { CreateUserService } from "../../services/users/CreateUserService";
 
 class CreateUserController{
     async handle(request: Request, response: Response){
@@ -17,9 +17,6 @@ class CreateUserController{
         return response.json(user);
     }
 
-    /**
-     * Classe de controller vai receber os dados e enviar para a classe de serviço.
-     */
 }
 
 export { CreateUserController };

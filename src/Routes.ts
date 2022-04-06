@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { CreateUserController } from "./controllers/CreateUserController";
-import { ListUserController } from "./controllers/ListUserController";
-import { DeleteUserController } from "./controllers/DeleteUserController";
-import { UpdateUserController } from "./controllers/UpdateUserController";
-import { AuthenticateUserController } from "./controllers/AuthenticateUserController";
+import { CreateUserController } from "./controllers/users/CreateUserController";
+import { ListUserController } from "./controllers/users/ListUserController";
+import { DeleteUserController } from "./controllers/users/DeleteUserController";
+import { UpdateUserController } from "./controllers/users/UpdateUserController";
+import { AuthenticateUserController } from "./controllers/users/AuthenticateUserController";
+
 
 import { ensureAdmin } from "./middlewares/EnsureAdmin";
 import { ensureAuthenticated } from "./middlewares/EnsureAuthenticated";
