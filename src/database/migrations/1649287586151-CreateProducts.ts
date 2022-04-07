@@ -10,20 +10,19 @@ export class CreateProducts1649287586151 implements MigrationInterface {
                     {
                         name: "id",
                         type: "uuid",
-                        isPrimary: true,
+                        isPrimary: true
                     },
                     {
                         name: "name",
-                        type: "varchar",
-                        isPrimary: true,
+                        type: "varchar"
                     },
                     {
                         name: "description",
-                        type: "varchar",
+                        type: "varchar"
                     },
                     {
                         name: "price",
-                        type: "decimal",
+                        type: "decimal"
                     },
                     {
                         name: "category_id",
@@ -32,12 +31,12 @@ export class CreateProducts1649287586151 implements MigrationInterface {
                     {
                         name: "created_at",
                         type: "timestamp",
-                        default: "now()",
+                        default: "now()"
                     },
                     {
                         name: "updated_at",
                         type: "timestamp",
-                        default: "now()",
+                        default: "now()"
                     },
                 ],
             })
