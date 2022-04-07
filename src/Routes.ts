@@ -25,6 +25,10 @@ import { DeleteCategoryController } from "./controllers/categories/DeleteCategor
 import { CreateCustomerController } from "./controllers/customers/CreateCustomerController";
 import { ListCustomerByIdController } from "./controllers/customers/ListCustomerByIdController";
 import { ListCustomerByNameController } from "./controllers/customers/ListCustomerByNameController";
+import { ListCustomerByAddressController } from "./controllers/customers/ListCustomerByAddressController";
+import { ListCustomerByCityController } from "./controllers/customers/ListCustomerByCityController";
+import { ListCustomerByStateController } from "./controllers/customers/ListCustomerByStateController";
+import { ListCustomerByNeighbourhoodController } from "./controllers/customers/ListCustomerByNeighbourhoodController";
 import { DeleteCustomerController } from "./controllers/customers/DeleteCustomerController";
 
 
@@ -37,16 +41,19 @@ const listUserByIdController = new ListUserByIdController();
 const deleteUserController = new DeleteUserController();
 const authenticateUserController = new AuthenticateUserController();
 
+
 const createProductController = new CreateProductController();
 const deleteProductController = new DeleteProductController();
 const listProductController = new ListProductController();
 const listProductNameController = new ListProductNameController();
+
 
 const createsaleController = new CreateSaleController();
 const listSaleIdController = new ListSaleIdController();
 const listSaleIdProductController = new ListSaleIdProductController();
 const listSaleIdClientController = new ListSaleIdClientController();
 const deleteSaleController = new DeleteSaleController();
+
 
 const createCategoryController = new CreateCategoryController();
 const listCategoryByNameController = new ListCategoryByNameController();
@@ -57,6 +64,10 @@ const deleteCategoryController = new DeleteCategoryController();
 const createCustomerController = new CreateCustomerController();
 const listCustomerByIdController = new ListCustomerByIdController();
 const listCustomerByNameController = new ListCustomerByNameController();
+const listCustomerByAddressController = new ListCustomerByAddressController();
+const listCustomerByCityController = new ListCustomerByCityController();
+const listCustomerByStateController = new ListCustomerByStateController();
+const listCustomerByNeighbourhoodController= new ListCustomerByNeighbourhoodController();
 const deleteCustomerController = new DeleteCustomerController();
 
 
@@ -92,6 +103,10 @@ router.delete("/categories/:id", deleteCategoryController.handle);
 
 router.get("/customer", listCustomerByNameController.handle);
 router.get("/customer", listCustomerByIdController.handle);
+router.get("/customer", listCustomerByAddressController.handle);
+router.get("/customer", listCustomerByCityController.handle);
+router.get("/customer", listCustomerByStateController.handle);
+router.get("/customer", listCustomerByNeighbourhoodController.handle);
 router.delete("/customer/:id", deleteCustomerController.handle);
 
 export { router };
