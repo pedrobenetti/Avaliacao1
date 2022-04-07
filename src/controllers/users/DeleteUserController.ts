@@ -8,7 +8,6 @@ class DeleteUserController{
         const users = await deleteUserService.execute({id});
 
         return response.json(users);
-
     }
 
 }
