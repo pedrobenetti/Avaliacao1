@@ -5,7 +5,7 @@ class ListCustomerByAddressController{
     async handle(request: Request, response: Response){
         const listCustomerByAddressService = new ListCustomerByAddressService;
 
-        const address = request.params.address;
+        const address = request.params.id;
         const customer = await listCustomerByAddressService.execute({ address });
 
         return response.json(customer);

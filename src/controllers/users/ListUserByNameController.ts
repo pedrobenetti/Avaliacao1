@@ -5,7 +5,7 @@ class ListUserByNameController {
     async handle(request: Request, response: Response){
         const listUserByNameService = new ListUserByNameService;
 
-        const name = request.params.name;
+        const name = request.params.id;
         const user = await listUserByNameService.execute({name});
 
         return response.json(user);
