@@ -14,7 +14,7 @@ class ListUserByIdService {
             throw new Error ("Inform the ID!");
         }
 
-        const user = await usersRepositories.findOne({id,});
+        const user = await usersRepositories.findOne({ where : {id: id} });
 
         if (user == null){
             throw new Error ("User not found!");

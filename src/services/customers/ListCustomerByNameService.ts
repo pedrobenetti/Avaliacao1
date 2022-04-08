@@ -14,7 +14,7 @@ class ListCustomerByNameService {
             throw new Error ("Inform the name!");
         }
 
-        const customer = await customerRepositories.findOne({ name });
+        const customer = await customerRepositories.findOne({ where : {name: name} });
 
         if (customer == null){
             throw new Error ("Customer not found!");

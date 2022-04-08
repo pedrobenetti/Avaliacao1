@@ -15,7 +15,7 @@ class ListCategoryByNameService{
             throw new Error("Inform the name!");
         }
 
-        const category  = await categoriesRepositories.findOne({name});
+        const category  = await categoriesRepositories.findOne({where: {name: name} });
 
         if (category == null){
             throw new Error ("Category not found");

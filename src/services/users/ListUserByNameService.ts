@@ -14,7 +14,7 @@ class ListUserByNameService {
             throw new Error ("Inform the name!");
         }
 
-        const user = await usersRepositories.findOne({name,});
+        const user = await usersRepositories.findOne({ where : {name: name} });
 
         if (user == null){
             throw new Error ("User not found!");

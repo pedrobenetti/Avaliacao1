@@ -14,7 +14,7 @@ class ListCustomerByStateService {
             throw new Error ("Inform the state!");
         }
 
-        const customer = await customerRepositories.findOne({ state });
+        const customer = await customerRepositories.findOne({ where : {state: state} });
 
         if (customer == null){
             throw new Error ("Customer not found!");

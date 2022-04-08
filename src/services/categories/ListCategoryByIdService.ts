@@ -11,11 +11,11 @@ class ListCategoryByIdService{
 
         const categoriesRepositories = getCustomRepository(CategoriesRepositories);
 
-        if(id!){
+        if(!id){
             throw new Error("Inform the ID!");
         } 
 
-        const category = await categoriesRepositories.findOne({id});
+        const category = await categoriesRepositories.findOne({ where : {id: id} });
 
         if (category == null){
             throw new Error ("Category not found!");
