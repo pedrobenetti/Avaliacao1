@@ -28,7 +28,6 @@ import { ListCustomerByNameController } from "./controllers/customers/ListCustom
 import { ListCustomerByAddressController } from "./controllers/customers/ListCustomerByAddressController";
 import { ListCustomerByCityController } from "./controllers/customers/ListCustomerByCityController";
 import { ListCustomerByStateController } from "./controllers/customers/ListCustomerByStateController";
-import { ListCustomerByNeighbourhoodController } from "./controllers/customers/ListCustomerByNeighbourhoodController";
 import { DeleteCustomerController } from "./controllers/customers/DeleteCustomerController";
 
 
@@ -67,7 +66,6 @@ const listCustomerByNameController = new ListCustomerByNameController();
 const listCustomerByAddressController = new ListCustomerByAddressController();
 const listCustomerByCityController = new ListCustomerByCityController();
 const listCustomerByStateController = new ListCustomerByStateController();
-const listCustomerByNeighbourhoodController= new ListCustomerByNeighbourhoodController();
 const deleteCustomerController = new DeleteCustomerController();
 
 
@@ -93,20 +91,19 @@ router.post("/customers", createCustomerController.handle);
 router.use(ensureAuthenticated);
 
 router.use(ensureAdmin);
-router.get("/users", listUserByNameController.handle);
-router.get("/users", listUserByIdController.handle);
+router.get("/users/list-by-name/:id", listUserByNameController.handle);
+router.get("/users/list-by-id/:id", listUserByIdController.handle);
 router.delete("/users/:id", deleteUserController.handle);
 
-router.get("/categories", listCategoryByNameController.handle);
-router.get("/categories", listCategoryByIdController.handle);
+router.get("/categories/list-by-name/:id", listCategoryByNameController.handle);
+router.get("/categories/list-by-id/:id", listCategoryByIdController.handle);
 router.delete("/categories/:id", deleteCategoryController.handle);
 
-router.get("/customer", listCustomerByNameController.handle);
-router.get("/customer", listCustomerByIdController.handle);
-router.get("/customer", listCustomerByAddressController.handle);
-router.get("/customer", listCustomerByCityController.handle);
-router.get("/customer", listCustomerByStateController.handle);
-router.get("/customer", listCustomerByNeighbourhoodController.handle);
-router.delete("/customer/:id", deleteCustomerController.handle);
+router.get("/customers/list-by-name/:id", listCustomerByNameController.handle);
+router.get("/customers/list-by-id/:id", listCustomerByIdController.handle);
+router.get("/customers/list-by-address/:id", listCustomerByAddressController.handle);
+router.get("/customers/list-by-city/:id", listCustomerByCityController.handle);
+router.get("/customers/list-by-state/:id", listCustomerByStateController.handle);
+router.delete("/customers/:id", deleteCustomerController.handle);
 
 export { router };
