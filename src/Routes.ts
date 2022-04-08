@@ -8,7 +8,7 @@ import { AuthenticateUserController } from "./controllers/users/AuthenticateUser
 import { CreateProductController } from "./controllers/products/CreateProductController";
 import { DeleteProductController } from "./controllers/products/DeleteProductController";
 import { ListProductController } from "./controllers/products/ListProductController";
-import { ListProductNameController } from "./controllers/products/ListProductNameController";
+
 
 import { CreateSaleController } from "./controllers/sales/CreateSaleController";
 import { ListSaleIdController } from "./controllers/sales/ListSaleIdController";
@@ -28,7 +28,6 @@ const authenticateUserController = new AuthenticateUserController();
 const createProductController = new CreateProductController();
 const deleteProductController = new DeleteProductController();
 const listProductController = new ListProductController();
-const listProductNameController = new ListProductNameController();
 
 const createsaleController = new CreateSaleController();
 const listSaleIdController = new ListSaleIdController();
@@ -38,9 +37,8 @@ const deleteSaleController = new DeleteSaleController();
 
 const router = Router();
 
-router.post("/products", ensureAuthenticated, createProductController.handle);
-router.get("/products/list-by-id/:id", listProductController.handle);
-router.get("/products/list-by-name/:name", listProductNameController.handle);
+router.post("/products", createProductController.handle);
+router.get("/products/list/", listProductController.handle);
 router.delete("/products/:id", ensureAuthenticated, ensureAdmin, deleteProductController.handle);
 
 router.post("/sales", createsaleController.handle);
