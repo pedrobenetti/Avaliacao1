@@ -5,9 +5,9 @@ class DeleteProductController{
     async handle(request: Request, response: Response){
         const deleteProductService = new DeleteProductService(); 
         const id = request.params.id;
-        const users = await deleteProductService.execute({id});
+        const products = await deleteProductService.execute({id});
 
-        return response.json(users);
+        return response.json(products);
 
     }
 

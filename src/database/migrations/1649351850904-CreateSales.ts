@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateProducts1649287586151 implements MigrationInterface {
+export class CreateSales1649351850904 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "products",
+                name: "sales",
                 columns: [
                     {
                         name: "id",
@@ -13,20 +13,28 @@ export class CreateProducts1649287586151 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
-                        name: "name",
-                        type: "varchar"
+                        name: "product_id",
+                        type: "uuid"
                     },
                     {
-                        name: "description",
-                        type: "varchar"
+                        name: "client_id",
+                        type: "uuid"
                     },
                     {
-                        name: "price",
+                        name: "quantity",
+                        type: "integer"
+                    },
+                    {
+                        name: "grossTotal",
                         type: "decimal"
                     },
                     {
-                        name: "category_id",
-                        type: "integer"
+                        name: "discount",
+                        type: "decimal"
+                    },
+                    {
+                        name: "amount",
+                        type: "decimal"
                     },
                     {
                         name: "created_at",
@@ -38,14 +46,13 @@ export class CreateProducts1649287586151 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     },
-                ],
+                ]
             })
-
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("products");
+        await queryRunner.dropTable("sales");
     }
 
 }

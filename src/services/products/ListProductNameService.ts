@@ -14,7 +14,7 @@ class ListProductNameService {
             throw new Error("Please enter the product name :)");
         }
 
-        const product = await productsRepositories.findOne({ name });
+        const product = await productsRepositories.findOne({ where: { name: name } });
 
         if (product == null) {
             throw new Error("Product not found ;(");
